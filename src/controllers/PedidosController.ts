@@ -23,6 +23,14 @@ class PedidosController {
             });
         }
     }
+
+    async showByPedido(req: Request, res: Response) {
+        const { PedidoWeb } = req.params;        
+        const pedidosService = new PedidosService();
+        const list = await pedidosService.listByPedido(PedidoWeb);
+
+        return res.json(list);
+    }
 }
 
 export { PedidosController };

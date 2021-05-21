@@ -34,6 +34,13 @@ class PedidosService {
 
         return pedido;
     }
+
+    async listByPedido(user_id: string ) {
+        const list = await this.pedidosRepository.find({
+    });
+
+        return list;
+    }
 }
 
 export { PedidosService };
